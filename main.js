@@ -29,6 +29,9 @@ function getCity() {
   if (!isNaN(cityToCheck)) {
     alert("Потрібно ввести саме свое місто, в якому ти живеш");
     return getCity();
+  } else if (city.length < 3) {
+    alert("Некоректне місто");
+    return getCity();
   } else {
     return city;
   }
