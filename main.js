@@ -46,23 +46,53 @@ function getSport() {
   }
 }
 
-function displayInfoUser() {
+function app() {
+  alert("Це дуже крута смарт программа ! Спробуй ))");
+
+  let messageAlert = "";
+
   let age = getAge();
   if (age === null) return;
+  messageAlert += `Ваш вік: ${age}.\n`;
 
   let city = getCity();
   if (city === null) return;
 
+  let cityLowerCase = city.toLowerCase();
+  if (
+    cityLowerCase == "київ" ||
+    cityLowerCase == "вашингтон" ||
+    cityLowerCase == "лондон"
+  ) {
+    let country = "";
+    if (cityLowerCase == "київ") {
+      country = "України";
+    } else if (cityLowerCase == "вашингтон") {
+      country = "США";
+    } else if (cityLowerCase == "лондон") {
+      country = "Великої Британії";
+    }
+    messageAlert += `Ти живеш у столиці: ${country}.\n`;
+  } else {
+    messageAlert += `Ти живеш у місті: ${city}.\n`;
+  }
+
   let sport = getSport();
   if (sport === null) return;
 
-  // alert("Ваш вік: " + "\n" + "Ти живеш у столиці " + city + ".");
+  let sportKings = {
+    карате: "Брюс Лі",
+    бокс: "Майк Тайсон",
+    шахмати: "Магнус Карлсен",
+  };
+  let sportKing = sportKings[sport];
+  if (sportKing) {
+    messageAlert += `Круто! Хочеш стати як ${sportKing}?`;
+  } else {
+    messageAlert += `Жаль що ми не знаємо королів цього виду спорту як ${sport}`;
+  }
+
+  alert(messageAlert);
 }
-displayInfoUser();
-// "Тобі  років"
-// "Ти живеш у столиці "
-// "Ти живеш у місті "
 
-// "Круто! Хочеш стати як ?"
-
-// "Шкода, що Ви не захотіли ввести свій(ю) …"  і вказуємо, що він не захотів вводити – дату народження, місто чи вид спорту .
+app();
