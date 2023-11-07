@@ -47,6 +47,9 @@ function getSport() {
   if (!isNaN(sportToCheck)) {
     alert("Потрібно ввести саме свій улюблений вид спорту");
     return getSport();
+  } else if (sport.length < 3) {
+    alert("Некоректний вид спорту");
+    return getSport();
   } else {
     return sport;
   }
