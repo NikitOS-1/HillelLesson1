@@ -56,7 +56,7 @@ function getSport() {
 }
 
 function app() {
-  alert("Це дуже крута смарт программа ! Спробуй ))");
+  alert("Це дуже крута смарт программа ! Спробуй !))");
 
   let messageAlert = "";
 
