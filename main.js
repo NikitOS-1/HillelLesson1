@@ -79,17 +79,19 @@ function app() {
 
   let sport = getSport();
   if (sport === null) return;
+  let sportLowerCase = sport.toLowerCase();
 
   let sportKings = {
     карате: "Брюс Лі",
     бокс: "Майк Тайсон",
     шахмати: "Магнус Карлсен",
   };
-  let sportKing = sportKings[sport];
+
+  let sportKing = sportKings[sportLowerCase];
   if (sportKing) {
     messageAlert += `Круто! Хочеш стати як ${sportKing}?`;
   } else {
-    messageAlert += `Жаль що ми не знаємо королів цього виду спорту як ${sport}`;
+    messageAlert += `Жаль що ми не знаємо королів цього виду спорту як ${sportLowerCase}.`;
   }
 
   alert(messageAlert);
