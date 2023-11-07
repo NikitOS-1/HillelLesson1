@@ -16,11 +16,13 @@ function getAge() {
 
 function getCity() {
   let city = prompt("Введіть місто, в якому ти живеш");
+
   let cityToCheck = city
     ? Number(city)
     : alert(
         "Шкода, що Ви не захотіли ввести свое місто, в якому ти живеш, Бай бай!)"
       );
+
   if (!isNaN(cityToCheck)) {
     alert("Потрібно ввести саме свое місто, в якому ти живеш");
     return getCity();
@@ -29,13 +31,32 @@ function getCity() {
   }
 }
 
+function getSport() {
+  let sport = prompt("Введіть ваш улюблений вид спорту:");
+
+  let sportToCheck = sport
+    ? Number(sport)
+    : alert("Шкода, що ви не захотіли ввести свій улюблений вид спорту.");
+
+  if (!isNaN(sportToCheck)) {
+    alert("Потрібно ввести саме свій улюблений вид спорту");
+    return getSport();
+  } else {
+    return sport;
+  }
+}
+
 function displayInfoUser() {
-  // let age = getAge();
-  // if (age === null) return;
+  let age = getAge();
+  if (age === null) return;
 
   let city = getCity();
   if (city === null) return;
-  alert("Ваш вік: " + "\n" + "Ти живеш у столиці " + city + ".");
+
+  let sport = getSport();
+  if (sport === null) return;
+
+  // alert("Ваш вік: " + "\n" + "Ти живеш у столиці " + city + ".");
 }
 displayInfoUser();
 // "Тобі  років"
