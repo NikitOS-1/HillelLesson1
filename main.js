@@ -23,19 +23,19 @@ function getCity() {
       );
   if (!isNaN(cityToCheck)) {
     alert("Потрібно ввести саме свое місто, в якому ти живеш");
-    getCity();
+    return getCity();
   } else {
     return city;
   }
 }
 
 function displayInfoUser() {
-  let age = getAge();
-  if (age === null) return;
+  // let age = getAge();
+  // if (age === null) return;
 
   let city = getCity();
   if (city === null) return;
-  alert("Ваш вік: " + age + "\n" + "Ти живеш у столиці " + city + ".");
+  alert("Ваш вік: " + "\n" + "Ти живеш у столиці " + city + ".");
 }
 displayInfoUser();
 // "Тобі  років"
