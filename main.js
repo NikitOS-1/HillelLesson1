@@ -74,7 +74,7 @@ function app() {
     }
     messageAlert += `Ти живеш у столиці: ${country}.\n`;
   } else {
-    messageAlert += `Ти живеш у місті: ${city}.\n`;
+    messageAlert += `Ти живеш у місті: ${city}.`;
   }
 
   let sport = getSport();
