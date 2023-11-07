@@ -1,7 +1,7 @@
 function getAge() {
   let age = prompt("Введіть свій рік народження");
 
-  if (age == false) {
+  if (age == false || age == null) {
     alert("Шкода, що Ви не захотіли ввести свій рік народження, Бай бай!)");
     return null;
   } else if (isNaN(Number(age))) {
