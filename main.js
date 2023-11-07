@@ -1,11 +1,14 @@
 function getAge() {
-  let age = Number(prompt("Введіть свій рік народження"));
+  let age = prompt("Введіть свій рік народження");
 
   if (age == false) {
     alert("Шкода, що Ви не захотіли ввести свій рік народження, Бай бай!)");
     return null;
-  } else if (isNaN(age)) {
+  } else if (isNaN(Number(age))) {
     alert("Потрібно ввести саме рік Вашого народження");
+    return getAge();
+  } else if (age.length < 4 || age.length > 5) {
+    alert("Некоректний рік Вашого народження");
     return getAge();
   }
 
@@ -74,7 +77,7 @@ function app() {
     }
     messageAlert += `Ти живеш у столиці: ${country}.\n`;
   } else {
-    messageAlert += `Ти живеш у місті: ${city}.`;
+    messageAlert += `Ти живеш у місті: ${city}.\n`;
   }
 
   let sport = getSport();
@@ -89,9 +92,9 @@ function app() {
 
   let sportKing = sportKings[sportLowerCase];
   if (sportKing) {
-    messageAlert += `Круто! Хочеш стати як ${sportKing}?`;
+    messageAlert += `Круто! Хочеш стати як ${sportKing}?\n`;
   } else {
-    messageAlert += `Жаль що ми не знаємо королів цього виду спорту як ${sportLowerCase}.`;
+    messageAlert += `Жаль що ми не знаємо королів цього виду спорту як ${sportLowerCase}.\n`;
   }
 
   alert(messageAlert);
